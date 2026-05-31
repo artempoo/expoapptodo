@@ -1,39 +1,36 @@
-import { StatusBar } from "expo-status-bar";
-import {
-  StyleSheet,
-  Text,
-  View,
-  Image,
-  Button,
-  TouchableOpacity,
-} from "react-native";
+import { StyleSheet, View, TouchableOpacity, FlatList } from "react-native";
+import { useState } from "react";
+import { COLORS } from "./constants/ui";
+import UITask from "./components/Task";
+import { tasksData } from "./constants/data";
+import UITaskForm from "./components/TaskForm";
 
 export default function App() {
-  const handlerButton = () => {
-    console.log("кнопка работает");
-  };
   return (
     <View style={styles.container}>
-      <Text>TODO app | мое первое приложение</Text>
-      <Image src="./assets/icon.png" style={{ width: 200, height: 200 }} />
-      <TouchableOpacity style={styles.button} onPress={handlerButton}>
-        <Text style={styles.buttonText}>Нажми на меня</Text>
-      </TouchableOpacity>
+      <FlatList
+        keyExtractor={(item) => item.id + item.title}
+        data={tasksData}
+        renderItem={({ item }) => <UITask task={item} />}
+      />
+
+      <UITaskForm />
     </View>
   );
 }
-
 const styles = StyleSheet.create({
   container: {
+    paddingTop: 60,
     flex: 1,
-    backgroundColor: "#fff",
-    alignItems: "center",
-    justifyContent: "center",
+    backgroundColor: COLORS.BACKGROUND,
   },
   button: {
-    backgroundColor: "#ccc",
+    backgroundColor: COLORS.BUTTON,
+    padding: 20,
+    borderRadius: 30,
+    borderStyle: "solid",
   },
   buttonText: {
-    color: "#f00",
+    color: COLORS.BUTTON_TEXT,
   },
 });
