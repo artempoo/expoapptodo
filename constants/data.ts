@@ -12,5 +12,5 @@ export const tasksData: Task[] = [
   { id: "9", title: "Разобраться с FlatList", completed: false },
   { id: "10", title: "Купить молоко", completed: false },
   { id: "11", title: "Поиграть на пианино", completed: false },
-  { id: "12", title: "Разобраться с FlatList", completed: false },
+  { id: "12", title: "Разобраться с FlatList", completed: true },
 ];

@@ -5,8 +5,7 @@ export const styles = StyleSheet.create({
   taskItem: {
     backgroundColor: COLORS.BUTTON,
     borderRadius: 12,
-    margin: 10,
-    marginBottom: 2,
+    marginBottom: 10,
     paddingLeft: 14,
     paddingRight: 14,
     display: "flex",
@@ -24,10 +23,12 @@ export const styles = StyleSheet.create({
   },
   taskItemText: {
     color: COLORS.BUTTON_TEXT,
+    fontSize: 16,
   },
   itemTextComplited: {
     color: COLORS.BUTTON,
     fontStyle: "italic",
+    textDecorationLine: "line-through",
   },
   headline: {
     flex: 1,
